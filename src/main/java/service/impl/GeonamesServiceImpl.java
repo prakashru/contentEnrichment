@@ -47,9 +47,9 @@ public class GeonamesServiceImpl implements GeonamesService {
     }
 
     public void findBoundingBox(String countryCode, String user){
-        Response skuska = get("http://ws.geonames.org/countryInfo?country="+countryCode+"&username="+user);
-        //skuska.print();  // for printing whole XML of this country
-        String xml = skuska.asString();
+        Response response = get("http://ws.geonames.org/countryInfo?country="+countryCode+"&username="+user);
+        //response.print();  // for printing whole XML of this country
+        String xml = response.asString();
         String countryName = from(xml).get("geonames.country.countryName").toString();
         String west = from(xml).get("geonames.country.west").toString();
         String north = from(xml).get("geonames.country.north").toString();
