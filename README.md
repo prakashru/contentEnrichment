@@ -1,0 +1,1 @@
+This project shows simple implementation and usage of DbPedia and Geonames for content Enrichment.
